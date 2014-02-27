@@ -63,5 +63,11 @@
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
     
+    <bean id="jdbcDao" class="com.roy.core.dao.impl.JdbcDAOImpl" >
+    	<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+	</bean>
+    
 	<aop:aspectj-autoproxy expose-proxy="true" />
 </beans>
