@@ -80,4 +80,11 @@ public class Params {
 		}
 		return cond;
 	}
+	
+	public int getTotal() {
+		if(this.getPager()!=null) {
+			return this.getPager().getTotalCount();
+		}
+		return 0;
+	}
 }

@@ -7,10 +7,10 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.roy.core.dao.BaseDAO;
-import com.roy.core.dao.Pager;
 import com.roy.core.dao.Sorter;
 import com.roy.core.dao.cond.Cond;
 import com.roy.core.service.BaseService;
+import com.roy.core.web.Params;
 
 @Transactional(propagation=Propagation.REQUIRED)
 public abstract class BaseServiceImpl<T> implements BaseService<T> {
@@ -35,8 +35,8 @@ public abstract class BaseServiceImpl<T> implements BaseService<T> {
 
 	@Override
 	@Transactional(readOnly=true)
-	public List<T> query(Cond cond, Pager pager, Sorter sorter) {
-		return getDao().query(cond, pager, sorter);
+	public List<T> query(Params params) {
+		return getDao().query(params.getCond(), params.getPager(), params.getSorter());
 	}
 
 	@Override

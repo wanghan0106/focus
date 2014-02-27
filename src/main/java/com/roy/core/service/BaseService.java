@@ -6,6 +6,7 @@ import java.util.List;
 import com.roy.core.dao.Pager;
 import com.roy.core.dao.Sorter;
 import com.roy.core.dao.cond.Cond;
+import com.roy.core.web.Params;
 
 public interface BaseService<T> {
 	
@@ -15,7 +16,7 @@ public interface BaseService<T> {
 	
 	public T get(Serializable id);
 	
-	public List<T> query(Cond cond,Pager pager,Sorter sorter);
+	public List<T> query(Params params);
 	
 	public List<T> query(Cond cond,Sorter sorter);
 	

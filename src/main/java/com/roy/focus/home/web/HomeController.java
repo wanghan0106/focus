@@ -34,8 +34,7 @@ public class HomeController {
 	@ResponseBody
 	@AfterQuery
 	public QueryResult list(Params params) {
-		List<User> userList = userService.query(params.getCond(),params.getPager(),params.getSorter());
-		return new QueryResult(params.getPager().getTotalCount(),userList);
+		return QueryResult.getQueryResult(userService, params);
 	}
 	
 	@RequestMapping(value = "/detail")
