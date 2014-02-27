@@ -5,7 +5,6 @@ import java.util.Map;
 
 import org.springframework.jdbc.core.CallableStatementCallback;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
-import org.springframework.stereotype.Repository;
 
 import com.roy.core.dao.JdbcDAO;
 
